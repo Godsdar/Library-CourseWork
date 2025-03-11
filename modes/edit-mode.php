@@ -1,6 +1,6 @@
 <div class="edit-mode">
   <?php
-    require "../php/functions/funcs.php";
+    require "../php/forms/select-tables-form.php";
     $pdo = require "../php/controllers/connection.php";
     echo select_tables_form($pdo, "select-table-form");
     $pdo = NULL;

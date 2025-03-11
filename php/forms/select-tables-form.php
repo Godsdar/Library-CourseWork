@@ -1,15 +1,19 @@
 <?php
-  function displayTablesForm ($pdo) {
-    $query = $pdo->query("SHOW TABLES");
-    $markup = "";
-    while (($table = $query->fetchColumn()))
-      $markup .= "<div class=\"form-element\"><label for=$table>$table</label><input type=\"checkbox\" name=$table class=\"select-table-input\"></div>";
+  function select_tables_form ($pdo, $name)
+  {
+    $content = "";
+    $tables_query = $pdo->query("SHOW TABLES");
+    $tables = [];
 
-    $markup .= "<div class\"form-element\"><input type=\"submit\" value=\"Отправить данные\"></div>";
+    while (($table_name = $tables_query->fetchColumn()))
+      $tables[] = $table_name;
 
-    $markup = "<fieldset>$markup</fieldset>";
-    return "<div class=\"select-tables-wrapper\">
-    <form name=\"select-tables\" class=\"select-tables-form\">$markup</form>
-    </div>";
+    foreach ($tables as $table) {
+      $label_content = str_replace("_", " ", $table);
+      $content .= "<div class=\"form-element\"><label for=$table>$label_content</label><input type=\"radio\" name=\"table-name\" value=$table></div>";
+    }
+
+    $content .= "<div class=\"form-element\"><input type=\"submit\" value=\"Выбрать таблицу\"></div>";
+    echo "<form name=$name><fieldset>$content</fieldset></form>";
   }
 ?>
