@@ -1,0 +1,313 @@
+@import "../node_modules/tabulator-tables/dist/css/tabulator_simple.min.css";
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: url(./images/background.jpg) no-repeat center top / cover;
+  font-family: sans-serif;
+}
+
+form {
+  position: relative;
+  margin: auto;
+  width: 800px;
+  left: 0;
+  right: 0;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  &[name=report-query-form] {
+    column-gap: 10px;
+    font-size: 1.25rem;
+  }
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  row-gap: 10px;
+  background-color: #472409;
+  border: 2px solid #d38b5d;
+  border-radius: 4px;
+  opacity: 0;
+}
+
+input {
+  background-color: #ddd;
+  border: 3px solid #d38b5d;
+  border-radius: 4px;
+  margin-left: 12px;
+  &[type=text] {
+    &:focus {
+      outline: none;
+      border: 3px solid #555;
+    }
+  }
+  &[type=submit] {
+    font: 400 .875rem sans-serif;
+    width: 200px;
+    height: 50px;
+  }
+  &[name=query-field] {
+    width: 300px;
+    text-align: center;
+  }
+}
+
+label {
+  white-space: wrap;
+  margin-left: 10px;
+  color: orange;
+}
+
+select {
+  background-color: white;
+}
+
+option {
+  background-color: royalblue;
+}
+
+button {
+  width: 200px;
+  height: 100px;
+  border: 3px solid #d38b5d;
+  border-radius: 8px;
+  background-color: #472409;
+  color: #d38b5d;
+  box-shadow: 6px 6px 10px 3px #111;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  color: orange;
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  font-size: 3rem;
+  left: 45%;
+  color:#d38b5d;
+}
+
+table {
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border: 3px solid #d38b5d;
+  border-collapse: collapse;
+  border-radius: 8px;
+  background-color: #472409;
+}
+
+th, td {
+  border-style: solid;
+  padding: 5px 10px;
+  margin: auto;
+  text-align: center;
+}
+
+#select-view-node {
+  margin-top: 24px;
+}
+
+.container {
+  width: 80%;
+}
+
+#wrapper {
+  margin-top: 24px;
+}
+
+.header {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #472409;
+  border-left: 3px solid #111;
+  border-right: 3px solid #111;
+  border-radius: 8px;
+  color: #d38b5d;
+  &-wrapper {
+    text-align: center;
+  }
+}
+
+.menu {
+  &-list {
+    display: flex;
+    column-gap: 20px;
+  }
+  &-item {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.page-content {
+  position: relative;
+  width: 100%;
+}
+
+.grid {
+  &-tables {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  &-item {
+    margin: auto;
+    font-style: italic;
+    font: 700 2rem sans-serif;
+    color: #d38b5d;
+    &-wrapper {
+      transition: all .2s;
+      display: flex;
+      width: 300px;
+      height: 200px;
+      border: #d38b5d 1px solid;
+      border-radius: 8px;
+      background-color: #472409;
+
+      &:hover {
+        scale: 1.1;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.edit-buttons-wrapper {
+  margin-top: 24px;
+  display: none;
+  justify-content: space-between;
+}
+
+.button-edit {
+  width: 200px;
+  height: 100px;
+  background-color: #472409;
+  color: #d38b5d;
+  border: 1px solid #d38b5d;
+  border-radius: 4px;
+}
+
+.button-submit {
+  color: #472409;
+}
+
+.form {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  &-element {
+    display: flex;
+    position: relative;
+    left: 20px;
+  }
+
+  &-label {
+    font: 500 1.2rem sans-serif;
+    color: yellow;
+  }
+
+  &-update {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &-selection {
+    width: 1000px;
+  }
+
+  &-select {
+    display: none;
+    &-tables {
+      position: relative;
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.fieldset-selection {
+  width: 1000px;
+}
+
+.columns-select-wrapper {
+  background-color: #472409;
+  border: 1px solid #d38b5d;
+  border-radius: 4px;
+}
+
+.select-input-wrapper {
+  border: 1px solid orange;
+  background-color: #472409;
+  text-align: center;
+}
+
+.report-page {
+  & > .wrapper {
+    display: flex;
+    column-gap: 50px;
+    margin: auto;
+    width: auto;
+    height: 300px;
+  }
+}
+
+#table-node {
+  margin: 32px auto;
+}
+
+.footer-wrapper {
+  display: flex;
+  & > * {
+    margin: 0 auto;
+  }
+}
+
+#search-fieldset,
+#report-fieldset {
+  row-gap: 16px;
+  & > .form-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > label {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#search-results-table,
+#report-node {
+  margin-top: 30px;
+}
+
+#report-header {
+  color: black;
+}
