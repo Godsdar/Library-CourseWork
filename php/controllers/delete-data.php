@@ -4,13 +4,11 @@
   $pdo = require "./connection.php";
   $table_query = $pdo->query("DESCRIBE $table_name");
   $first_column = $table_query->fetchColumn();
-  $conditions = "";
 
   foreach ($data as $index)
     $conditions .= "$first_column" . " = " . "$index" . " OR ";
+
   $conditions = substr($conditions, 0, -4);
   $sql = "DELETE FROM $table_name WHERE $conditions";
-  if (!$pdo->query($sql))
-    echo "\nПри удалении данных произошла ошибка в запросе\n";
-  $pdo = NULL;
+  $pdo->query($sql);
 ?>

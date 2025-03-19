@@ -10,7 +10,7 @@ function navigate (mode) {
     document.querySelector(".page-content").innerHTML = content;
     switch (mode) {
       case "edit":
-        document.forms["select-table-form"].addEventListener("submit", selectTableHandler);
+        document.forms["select-table-form"].onsubmit = selectTableHandler;
         anime({
           targets: "fieldset",
           duration: 5000,
@@ -18,7 +18,7 @@ function navigate (mode) {
         });
         break;
       case "search":
-        document.forms["search-form"].addEventListener("submit", searchHandler);
+        document.forms["search-form"].onsubmit = searchHandler;
         anime({
           targets: "fieldset",
           duration: 5000,
@@ -26,7 +26,7 @@ function navigate (mode) {
         });
         break;
       case "report":
-        document.forms["report-form"].addEventListener("submit", createReportBookLending);
+        document.forms["report-form"].onsubmit = createReportBookLending;
         anime({
           targets: "fieldset",
           duration: 5000,

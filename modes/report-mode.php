@@ -18,7 +18,7 @@
           <option value="Название">По книгам</option>
           <option value="Дата_выдачи">По дате выдачи</option>
           <option value="Фамилия">По фамилиям читателей</option>
-          <option value="Число_дней">По числу дней в у читателя</option>
+          <option value="Число_дней">По числу дней у читателя</option>
         </select>
       </div>
       <div class="form-element"><label for="sorting-order">Порядок сортировки</label>

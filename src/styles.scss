@@ -253,6 +253,12 @@ th, td {
   }
 }
 
+.insert-form-field {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .fieldset-selection {
   width: 1000px;
 }
@@ -281,13 +287,6 @@ th, td {
 
 #table-node {
   margin: 32px auto;
-}
-
-.footer-wrapper {
-  display: flex;
-  & > * {
-    margin: 0 auto;
-  }
 }
 
 #search-fieldset,

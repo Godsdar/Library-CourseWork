@@ -1,7 +1,8 @@
 import { TabulatorFull as Tabulator, EditModule } from "tabulator-tables";
 import * as getTableData from "./get-tables-data.js";
+import { html } from "gridjs";
 
-function buildTable (tableName, tableData) {
+function buildTable(tableName, tableData) {
   let columnsSettings;
   switch (tableName) {
     case "Книги":
@@ -17,7 +18,7 @@ function buildTable (tableName, tableData) {
       columnsSettings = getTableData.getPublishingHouseData();
       break;
     case "Книги_и_авторы":
-      columnsSettings = getTableData.getBooksAndAuthorsData(); 
+      columnsSettings = getTableData.getBooksAndAuthorsData();
       break;
     case "Книги_и_жанры":
       columnsSettings = getTableData.getBooksAndGenresData();
@@ -45,7 +46,7 @@ function buildTable (tableName, tableData) {
   }
   return new Tabulator("#table-node", {
     dependencies: {
-      DateTime: DateTime
+      DateTime: DateTime,
     },
     columns: columnsSettings,
     height: 300,
@@ -55,5 +56,4 @@ function buildTable (tableName, tableData) {
     selectableRows: true,
   });
 }
-
 export default buildTable;

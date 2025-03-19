@@ -4,8 +4,7 @@ function displayReport (data) {
   const columnsSettings = [];
 
   columnsSettings.push({title: "Название книги", field: "Название"});
-  columnsSettings.push({title: "Имя читателя", field: "Имя"});
-  columnsSettings.push({title: "Фамилия читателя", field: "Фамилия"});
+  columnsSettings.push({title: "Читатель", field: "ФИО"});
   columnsSettings.push({title: "Телефон читателя", field: "Телефон"});
   columnsSettings.push({title: "Дата выдачи", field: "Дата_выдачи"});
   columnsSettings.push({title: "Дата сдачи", field: "Дата_сдачи"});

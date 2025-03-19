@@ -3,7 +3,7 @@
     <fieldset id="search-fieldset">
       <div class="form-element">
         <label for="title">Поиск по заглавию</label>
-        <input type="text">
+        <input type="text" name="title">
       </div>
       <div class="form-element">
         <label for="author">Авторы</label>
@@ -15,7 +15,7 @@
             $authors = $pdo->query("SELECT * FROM Авторы");
             while (($author = $authors->fetch(PDO::FETCH_ASSOC))) {
               $id = $author["Код_автора"];
-              $val = $author["Имя"] . " " . $author["Фамилия"];
+              $val = $author["ФИО"];
               echo "<option value=$id>$val</option>";
             }
           ?>

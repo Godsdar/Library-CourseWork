@@ -13,11 +13,9 @@ async function searchHandler(event) {
 function displaySearchngResult (tableData) {
   const columnsSettings = [];
 
-  columnsSettings.push({ title: "Название", field: "Название_книги", editable: false });
-  columnsSettings.push({ title: "Имя автора", field: "Имя_автора", editable: false })
-  columnsSettings.push({ title: "Фамилия автора", field: "Фамилия_автора", editable: false });
-  columnsSettings.push({ title: "Год первой публикации", field: "Год_первой_публикации", editable: false });
-  console.log(document.querySelector("#search-results-table").outerHTML);
+  columnsSettings.push({ title: "Название", field: "Название_книги" });
+  columnsSettings.push({ title: "Автор", field: "ФИО" })
+  columnsSettings.push({ title: "Год первой публикации", field: "Год_первой_публикации" });
 
   const table = new Tabulator("#search-results-table", {
     columns: columnsSettings,
@@ -25,7 +23,6 @@ function displaySearchngResult (tableData) {
     width: 500,
     layout: "fitColumns"
   });
-  displayTableAnime.play();
   return table;
 }
 

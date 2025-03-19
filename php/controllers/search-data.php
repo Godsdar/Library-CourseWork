@@ -59,13 +59,12 @@
     $cond .= "Книги.Год_первой_публикации BETWEEN $min_year AND $max_year";
   }
 
-  $select = "SELECT Книги.Название AS Название_книги, Авторы.Имя AS Имя_автора, Авторы.Фамилия AS Фамилия_автора, Книги.Год_первой_публикации";
+  $select = "SELECT Книги.Название AS Название_книги, Авторы.ФИО AS ФИО, Книги.Год_первой_публикации";
   $joins .= " JOIN Книги_и_авторы ON Книги.Код_книги = Книги_и_авторы.Код_книги
   JOIN Авторы ON Авторы.Код_автора = Книги_и_авторы.Код_автора";
 
   $pdo = require "./connection.php";
   $sql = "$select $joins $cond";
   $search_query = $pdo->query($sql);
-  $data = json_encode($search_query->fetchAll(PDO::FETCH_ASSOC));
-  echo $data;
+  echo json_encode($search_query->fetchAll(PDO::FETCH_ASSOC));
 ?>
