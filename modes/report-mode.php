@@ -7,7 +7,7 @@
           <option value="" selected>Не группировать</option>
           <option value="Книги.Название">По книгам</option>
           <option value="Дата_выдачи">По дате выдачи</option>
-          <option value="Фамилия">По фамилиям читателей</option>
+          <option value="ФИО">По ФИО читателей</option>
           <option value="Число_дней">По числу дней у читателя</option>
         </select>
       </div>
@@ -17,7 +17,7 @@
           <option value="" selected>Не сортировать</option>
           <option value="Название">По книгам</option>
           <option value="Дата_выдачи">По дате выдачи</option>
-          <option value="Фамилия">По фамилиям читателей</option>
+          <option value="ФИО">По ФИО читателей</option>
           <option value="Число_дней">По числу дней у читателя</option>
         </select>
       </div>
