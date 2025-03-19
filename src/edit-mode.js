@@ -79,7 +79,7 @@ function handleDelete (tableName, tableData, selectedRowsIndexes) {
       method: "POST",
       body: JSON.stringify(selectedRowsIndexes)
     });
-    const data = await response.text();
+    await response.text();
     deleteSelectedRows(tableName, tableData, selectedRowsIndexes);
   }
 }

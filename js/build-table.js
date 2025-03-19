@@ -1,6 +1,5 @@
 import { TabulatorFull as Tabulator, EditModule } from "tabulator-tables";
 import * as getTableData from "./get-tables-data.js";
-import { html } from "gridjs";
 
 function buildTable(tableName, tableData) {
   let columnsSettings;

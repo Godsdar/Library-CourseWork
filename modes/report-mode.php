@@ -5,7 +5,7 @@
         <label for="grouping">Группировка</label>
         <select name="grouping" id="grouping">
           <option value="" selected>Не группировать</option>
-          <option value="Книги.Название">По книгам</option>
+          <option value="Название">По книгам</option>
           <option value="Дата_выдачи">По дате выдачи</option>
           <option value="ФИО">По ФИО читателей</option>
           <option value="Число_дней">По числу дней у читателя</option>

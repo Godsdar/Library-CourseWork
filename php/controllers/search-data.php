@@ -1,5 +1,5 @@
 <?php
-  $logic_type = $_POST["logic-type"];
+  $logic_operator = $_POST["logic-operator"];
   $title_part = "";
   $publish_years_part = "";
   $author_part = "";
@@ -9,7 +9,7 @@
   $select = "SELECT Книги.Название AS Название_книги, ";
   $count_conditions = 0;
 
-  if (!empty($_POST["logic-type"]) && empty($_POST["title"]) && empty($_POST["min-year"]) && empty($_POST["max-year"]) && $_POST["author"] == "Не учитывать" && $_POST["genre"] == "Не учитывать") {
+  if (!empty($_POST["logic-operator"]) && empty($_POST["title"]) && empty($_POST["min-year"]) && empty($_POST["max-year"]) && $_POST["author"] == "Не учитывать" && $_POST["genre"] == "Не учитывать") {
     echo "Вы не указали ни одного критерия поиска данных";
     exit(1);
   }
@@ -52,7 +52,7 @@
     $count_conditions++;
 
     if ($count_conditions > 1)
-      $cond .= " " . $logic_type . " ";
+      $cond .= " " . $logic_operator . " ";
     else
       $cond .= "WHERE ";
 
